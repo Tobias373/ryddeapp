@@ -16,7 +16,7 @@ const db = new sqlite3.Database("./ryddeapp", sqlite3.OPEN_READWRITE, (err) => {
 
 // get request for getTasks obviously
 app.get("/getTasks", (req, res) => {
-  sql = "SELECT * FROM task";
+  sql = "SELECT * FROM tasks";
   db.all(sql, [], (err, rows) => {
     if (err) return console.error(err.message);
     res.json(rows);
